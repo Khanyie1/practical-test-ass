@@ -1,0 +1,31 @@
+GET http://localhost:3011/api/Khanyie/mostPopularCar
+
+###
+POST http://localhost:3011/api/Khanyie/car
+Content-Type: application/json
+
+{
+    "color": "white",
+    "make": "Benz",
+    "model": "AMG",
+    "reg_number": "CY 16875"
+}
+
+### to delete by sending the reg number
+POST http://localhost:3011/api/Khanyie/car/delete
+content-type: application/json
+
+{
+    "reg_number": "CY 16875"
+}
+
+### To update the car
+PUT http://localhost:3011/api/Khanyie/car/update
+content-type: application/json
+
+{
+    "color": "red",
+    "make": "Toyota",
+    "model": "Tazz",
+    "reg_number": "CY 16875"
+}

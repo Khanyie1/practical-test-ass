@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Management</title>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            width: 100%;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 2em
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" x-data="data">
+        <h1>Car Management CRUD</h1>
+
+        <div class="form-group">
+            <h2>Add Car</h2>
+            <form @submit.prevent="addCar()">
+                <label for="addColor">Color:</label>
+                <input type="text" id="addColor" x-model="newCar.color" required>
+
+                <label for="addMake">Make:</label>
+                <input type="text" id="addMake" x-model="newCar.make" required>
+
+                <label for="addModel">Model:</label>
+                <input type="text" id="addModel" x-model="newCar.model" required>
+
+                <label for="addRegNumber">Registration Number:</label>
+                <input type="text" id="addRegNumber" x-model="newCar.reg_number" required>
+
+                <button type="submit">Add Car</button>
+            </form>
+        </div>
+
+        <div class="form-group">
+            <h2>Update Car</h2>
+            <form @submit.prevent="updateCar()">
+                <label for="updateRegNumber">Registration Number:</label>
+                <input type="text" id="updateRegNumber" x-model="updateCar.reg_number" required>
+
+                <label for="updateColor">Color:</label>
+                <input type="text" id="updateColor" x-model="updateCar.color">
+
+                <label for="updateMake">Make:</label>
+                <input type="text" id="updateMake" x-model="updateCar.make">
+
+                <label for="updateModel">Model:</label>
+                <input type="text" id="updateModel" x-model="updateCar.model">
+
+                <button type="submit">Update Car</button>
+            </form>
+        </div>
+
+        <div class="form-group">
+            <h2>Delete Car</h2>
+            <form @submit.prevent="deleteCar()">
+                <label for="deleteRegNumber">Registration Number:</label>
+                <input type="text" id="deleteRegNumber" x-model="deleteRegNumber" required>
+
+                <button type="submit">Delete Car</button>
+            </form>
+        </div>
+
+        <div class="form-group">
+            <h2>Most Popular Car</h2>
+            <button @click="getMostPopularCar">Get Most Popular Car</button>
+            <div x-show="mostPopularCar !==''">
+                <p><strong>Result</strong> <span x-text="mostPopularCar"></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
