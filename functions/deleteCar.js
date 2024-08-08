@@ -1,9 +1,9 @@
 export function deleteCar(cars, reg_number) {
-    const initialLength = cars.length;
-    const updatedCars = cars.filter(car => car.reg_number !== reg_number);
-    if (updatedCars.length < initialLength) {
-        return { success: true, message: `Car with reg_number ${reg_number} deleted.` };
-    } else {
-        return { success: false, message: `Car with reg_number ${reg_number} not found.` };
+    for (let i = 0; i < cars.length; i++) {
+        if (cars[i].reg_number === reg_number) {
+            cars.splice(i, 1);
+            return { success: true, message: `Car with reg_number ${reg_number} deleted.` };
+        }
     }
+    return { success: false, message: `Car with reg_number ${reg_number} not found.` };
 }

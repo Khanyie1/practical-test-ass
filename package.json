@@ -25,11 +25,15 @@
   "contributors": [],
   "scripts": {
     "dev": "nodemon express.js",
-    "test": ""
+    "test": "mocha"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "nodemon": "^3.1.4"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.7.0"
   }
 }

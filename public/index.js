@@ -27,8 +27,16 @@ document.addEventListener("alpine:init", () => {
 
             async updateCar() {
                 try {
-                    const response = await axios.post('http://localhost:3011/api/Khanyie/car/update', this.updateCar);
+                    const carData = { 
+                        color: this.updateCar.color, 
+                        make: this.updateCar.make, 
+                        model: this.updateCar.model, 
+                        reg_number: this.updateCar.reg_number 
+                    };
+            
+                    const response = await axios.post('http://localhost:3011/api/Khanyie/car/update', carData);
                     alert('Car updated: ' + JSON.stringify(response.data));
+
                     this.updateCar = { color: '', make: '', model: '', reg_number: '' };
                 } catch (error) {
                     alert('Error updating car: ' + error.message);
@@ -57,7 +65,7 @@ document.addEventListener("alpine:init", () => {
                         this.mostPopularCar = ''
                     }, 5000)
                 } catch (error) {
-                    console.log('Error fetching most popular car: ' + error.message);
+                    alert('Error fetching most popular car: ' + error.message);
                 }
             }
         }

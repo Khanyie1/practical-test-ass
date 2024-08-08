@@ -20,11 +20,11 @@ content-type: application/json
 }
 
 ### To update the car
-PUT http://localhost:3011/api/Khanyie/car/update
+POST http://localhost:3011/api/Khanyie/car/update
 content-type: application/json
 
 {
-    "color": "yellow",
+    "color": "blue",
     "make": "Benz",
     "model": "Tazz",
     "reg_number": "CY 16875"

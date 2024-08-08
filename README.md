@@ -10,6 +10,9 @@ It provides endpoints to add, delete, update, and fetch the most popular car fro
 To start the server in development mode, run:
 - npm run dev
 
+# Running the test
+- npm test
+
 # API Endpoints
 ### To get the most popular car
 GET http://localhost:3011/api/Khanyie/mostPopularCar
@@ -34,12 +37,12 @@ content-type: application/json
 }
 
 ### To update the car
-PUT http://localhost:3011/api/Khanyie/car/update
+POST http://localhost:3011/api/Khanyie/car/update
 content-type: application/json
 
 {
-    "color": "red",
-    "make": "Toyota",
+    "color": "blue",
+    "make": "Benz",
     "model": "Tazz",
     "reg_number": "CY 16875"
 }
@@ -56,3 +59,7 @@ content-type: application/json
 - express: ^4.19.2
 - cors: ^2.8.5
 - nodemon: ^3.1.4
+
+# Dev-Dependencies
+- chai: ^5.1.1,
+- mocha: ^10.7.0
