@@ -24,8 +24,8 @@ PUT http://localhost:3011/api/Khanyie/car/update
 content-type: application/json
 
 {
-    "color": "red",
-    "make": "Toyota",
+    "color": "yellow",
+    "make": "Benz",
     "model": "Tazz",
     "reg_number": "CY 16875"
 }
