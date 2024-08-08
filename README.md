@@ -1,3 +1,5 @@
+[![Build Status](https://img.shields.io/github/workflow/status/Khanyie1/practical-test-ass/CI)](https://github.com/Khanyie1/practical-test-ass/actions)
+
 # Car Management API
 This project is a Car Management API built using Node.js, Express, and CORS. 
 It provides endpoints to add, delete, update, and fetch the most popular car from an array of car objects.
